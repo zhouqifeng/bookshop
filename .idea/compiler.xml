@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shop-adminmanagement-dao" />
+        <module name="shop-adminmanagement-interface" />
+        <module name="shop-adminmanagement-pojo" />
+        <module name="shop-adminmanagement-service" />
+        <module name="shop-adminmanagement-web" />
+        <module name="shop-cart" />
+        <module name="shop-common" />
+        <module name="shop-login" />
+        <module name="shop-order" />
+        <module name="shop-portal" />
+        <module name="shop-search" />
+        <module name="shop-usermanagement" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bookshop.iml" filepath="$PROJECT_DIR$/bookshop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement.iml" filepath="$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-dao/shop-adminmanagement-dao.iml" filepath="$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-dao/shop-adminmanagement-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-interface/shop-adminmanagement-interface.iml" filepath="$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-interface/shop-adminmanagement-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-pojo/shop-adminmanagement-pojo.iml" filepath="$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-pojo/shop-adminmanagement-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-service/shop-adminmanagement-service.iml" filepath="$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-service/shop-adminmanagement-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-web/shop-adminmanagement-web.iml" filepath="$PROJECT_DIR$/../shop-adminmanagement/shop-adminmanagement-web/shop-adminmanagement-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-cart/shop-cart.iml" filepath="$PROJECT_DIR$/../shop-cart/shop-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-common/shop-common.iml" filepath="$PROJECT_DIR$/../shop-common/shop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-login/shop-login.iml" filepath="$PROJECT_DIR$/../shop-login/shop-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-order/shop-order.iml" filepath="$PROJECT_DIR$/../shop-order/shop-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-portal/shop-portal.iml" filepath="$PROJECT_DIR$/../shop-portal/shop-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-search/shop-search.iml" filepath="$PROJECT_DIR$/../shop-search/shop-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../shop-usermanagement/shop-usermanagement.iml" filepath="$PROJECT_DIR$/../shop-usermanagement/shop-usermanagement.iml" />
+    </modules>
+  </component>
+</project>
