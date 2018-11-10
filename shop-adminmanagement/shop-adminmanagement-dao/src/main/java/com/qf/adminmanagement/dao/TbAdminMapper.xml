@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.adminmanagement.dao.TbAdminMapper" >
+
+  <sql id="Base_Column_List" >
+    adminId, adminname, password, status, spare
+  </sql>
+  <select id="countByExample" resultType="java.lang.Integer" parameterType="com.qf.adminmanagement.pojo.vo.AdminPageInfo">
+    select count(1) from tb_admin
+    <where>
+      status = 0
+      <if test="searchWord != null and searchWord != ''">
+        and adminname like "%${searchWord}%"
+      </if>
+    </where>
+  </select>
+
+  <select id="selectAdmins" resultType="com.qf.common.pojo.po.TbAdmin" parameterType="com.qf.adminmanagement.pojo.vo.AdminPageInfo">
+    select adminid,adminname,password,status,spare from tb_admin
+    <where>
+      status = 0
+      <if test="searchWord != null and searchWord != ''">
+        and adminname like "%${searchWord}%"
+      </if>
+    </where>
+    limit #{offSet}, #{pageSize};
+  </select>
+
+  <update id="deleteAdmins">
+    update tb_admin set status = 1 where adminid in
+    <foreach item="adminid" index="index" collection="list" open="(" separator="," close=")">
+      #{adminid}
+    </foreach>;
+  </update>
+
+  <update id="deleteAdmin" parameterType="com.qf.common.pojo.po.TbAdmin">
+        update tb_admin set status = 1 where adminid = #{adminid};
+    </update>
+
+  <update id="editAdmin" parameterType="com.qf.common.pojo.po.TbAdmin">
+        update tb_admin set adminname=#{adminname},password=#{password} where adminid=#{adminid};
+    </update>
+
+  <insert id="insertAdmin" parameterType="com.qf.common.pojo.po.TbAdmin">
+        insert into tb_admin(adminname,password) values (#{adminname},#{password});
+    </insert>
+</mapper>
