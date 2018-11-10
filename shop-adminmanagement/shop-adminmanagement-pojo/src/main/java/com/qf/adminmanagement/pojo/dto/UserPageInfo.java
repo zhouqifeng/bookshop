@@ -1,4 +1,4 @@
-package com.qf.adminmanagement.pojo.vo;
+package com.qf.adminmanagement.pojo.dto;
 
 public class UserPageInfo {
     private Integer page;

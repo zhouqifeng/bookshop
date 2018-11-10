@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qf.adminmanagement.dao.UserMapper" >
-  <select id="countUser" parameterType="com.qf.adminmanagement.pojo.vo.UserPageInfo" resultType="java.lang.Integer">
+  <select id="countUser" parameterType="com.qf.adminmanagement.pojo.dto.UserPageInfo" resultType="java.lang.Integer">
       select count(userid) from tb_user
       <if test="searchWord != null and searchWord != ''">
         <where>
@@ -10,7 +10,7 @@
       </if>
   </select>
 
-  <select id="searchUserByPage" parameterType="com.qf.adminmanagement.pojo.vo.UserPageInfo" resultType="com.qf.common.pojo.po.TbUser">
+  <select id="searchUserByPage" parameterType="com.qf.adminmanagement.pojo.dto.UserPageInfo" resultType="com.qf.common.pojo.po.TbUser">
     select * from tb_user
     <if test="searchWord != null and searchWord != ''">
       <where>

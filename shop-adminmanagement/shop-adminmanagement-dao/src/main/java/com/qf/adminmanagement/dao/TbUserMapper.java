@@ -1,7 +1,7 @@
 package com.qf.adminmanagement.dao;
 
 import com.qf.common.pojo.po.TbUser;
-import com.qf.adminmanagement.pojo.po.TbUserExample;
+import com.qf.common.pojo.po.TbUserExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -76,7 +76,7 @@
     username, userid, password, phone, mail, address, realName, postalCode, usernote, 
     sex, spare
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.adminmanagement.pojo.po.TbUserExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.common.pojo.po.TbUserExample" >
     select
     <if test="distinct" >
       distinct
@@ -100,7 +100,7 @@
     delete from tb_user
     where username = #{username,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.qf.adminmanagement.pojo.po.TbUserExample" >
+  <delete id="deleteByExample" parameterType="com.qf.common.pojo.po.TbUserExample" >
     delete from tb_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -189,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.qf.adminmanagement.pojo.po.TbUserExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.qf.common.pojo.po.TbUserExample" resultType="java.lang.Integer" >
     select count(*) from tb_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

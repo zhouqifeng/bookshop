@@ -1,7 +1,7 @@
 package com.qf.adminmanagement.web;
 
 import com.qf.common.pojo.po.TbUser;
-import com.qf.adminmanagement.pojo.vo.UserPageInfo;
+import com.qf.adminmanagement.pojo.dto.UserPageInfo;
 import com.qf.adminmanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

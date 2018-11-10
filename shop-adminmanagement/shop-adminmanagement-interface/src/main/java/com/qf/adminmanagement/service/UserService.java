@@ -1,7 +1,7 @@
 package com.qf.adminmanagement.service;
 
 import com.qf.common.pojo.po.TbUser;
-import com.qf.adminmanagement.pojo.vo.UserPageInfo;
+import com.qf.adminmanagement.pojo.dto.UserPageInfo;
 
 import java.util.Map;
 

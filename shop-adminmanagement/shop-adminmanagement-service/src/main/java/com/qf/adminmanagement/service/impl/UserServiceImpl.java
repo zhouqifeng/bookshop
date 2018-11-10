@@ -3,7 +3,7 @@ package com.qf.adminmanagement.service.impl;
 import com.qf.adminmanagement.dao.TbUserMapper;
 import com.qf.adminmanagement.dao.UserMapper;
 import com.qf.common.pojo.po.TbUser;
-import com.qf.adminmanagement.pojo.vo.UserPageInfo;
+import com.qf.adminmanagement.pojo.dto.UserPageInfo;
 import com.qf.adminmanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

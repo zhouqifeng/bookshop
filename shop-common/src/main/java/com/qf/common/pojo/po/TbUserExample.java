@@ -1,4 +1,4 @@
-package com.qf.adminmanagement.pojo.po;
+package com.qf.common.pojo.po;
 
 import java.util.ArrayList;
 import java.util.List;
