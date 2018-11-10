@@ -54,7 +54,7 @@
                     <!--端口号-->
                     <port>8080</port>
                     <!--上下文-->
-                    <path>/bookshop</path>
+                    <path>/bookshopmanagement</path>
                     <!--解决GET请求中的中文乱码问题-->
                     <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
