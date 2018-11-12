@@ -276,7 +276,14 @@
     </where>
   </select>
   <select id="selectOrders" parameterType="com.qf.adminmanagement.pojo.dto.OrderInfo" resultType="com.qf.common.pojo.po.TbOrder">
-    select orderid, username, goods, dealtime, status, spare from tb_order
+    select orderid, username, goods, dealtime,
+    (case tb_order.status
+    when 0 then '未支付'
+    when 1 then '已支付'
+    when 2 then '已处理'
+    else '异常'
+    end
+    )status, spare from tb_order
     <where>
       <if test="select_word!= null and select_word!=''">
         username like concat('%',#{select_word},'%')
