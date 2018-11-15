@@ -1,5 +1,6 @@
 package com.qf.adminmanagement.service.impl;
 
+import com.alibaba.fastjson.JSONArray;
 import com.qf.adminmanagement.dao.TbUserMapper;
 import com.qf.adminmanagement.dao.UserMapper;
 import com.qf.common.pojo.po.TbUser;
@@ -57,6 +58,26 @@ public class UserServiceImpl implements UserService {
         HashMap<String, Object> map = new HashMap<>();
 
         map.put("count",count);
+
+        return map;
+    }
+
+    @Override
+    public Map<String, Object> deleteUser(TbUser user) {
+
+        Integer count = userdao.removeUser(user.getUserid());
+
+        HashMap<String, Object> map = new HashMap<>();
+
+        return null;
+    }
+
+    @Override
+    public Map<String, Object> deleteUsers(JSONArray array) {
+
+        Integer count = userdao.removeUsers(array);
+
+        HashMap<String, Object> map = new HashMap<>();
 
         return map;
     }
