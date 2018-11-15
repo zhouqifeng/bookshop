@@ -7,9 +7,9 @@ public class TbOrder {
 
     private String username;
 
-    private Date dealtime;
+    private String dealtime;
 
-    private Integer status;
+    private String status;
 
     private String spare;
 
@@ -31,19 +31,19 @@ public class TbOrder {
         this.username = username == null ? null : username.trim();
     }
 
-    public Date getDealtime() {
+    public String getDealtime() {
         return dealtime;
     }
 
-    public void setDealtime(Date dealtime) {
-        this.dealtime = dealtime;
+    public void setDealtime(String dealtime) {
+        this.dealtime = dealtime.substring(0,19);
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
