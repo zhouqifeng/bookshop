@@ -13,6 +13,7 @@
         <module name="shop-adminmanagement-web" />
         <module name="shop-cart" />
         <module name="shop-common" />
+        <module name="shop-detail-web" />
         <module name="shop-login" />
         <module name="shop-order" />
         <module name="shop-portal" />
