@@ -1,5 +1,7 @@
 package com.qf.web;
 
+import com.qf.pojo.Item;
+import com.qf.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,13 +19,14 @@ public class ItemController {
 	@RequestMapping("/item/{itemId}")
 	public String showItemInfo(@PathVariable Long itemId, Model model) {
 		//调用服务取商品基本信息
-		TbItem tbItem = itemService.getItemById(itemId);
-		Item item = new Item(tbItem);
+		Item item = itemService.getItemById(itemId);
 		//取商品描述信息
-		TbItemDesc itemDesc = itemService.getItemDescById(itemId);
+		//TbItemDesc itemDesc = itemService.getItemDescById(itemId);
 		//把信息传递给页面
+		System.out.println(item.toString());
+
 		model.addAttribute("item", item);
-		model.addAttribute("itemDesc", itemDesc);
+		//model.addAttribute("itemDesc", itemDesc);
 		//返回逻辑视图
 		return "item";
 	}

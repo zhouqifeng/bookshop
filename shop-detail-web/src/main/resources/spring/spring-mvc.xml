@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
 ">
     <!--扫描web层的注解类,以下注解是为了扫描这个注解：@Controller-->
-    <context:component-scan base-package="com.qf.details.web"/>
+    <context:component-scan base-package="com.qf.web"/>
     <!--@RequestMapping @ResponseBody jackson转换成JSON-->
     <mvc:annotation-driven/>
     <!--上传解析器-->

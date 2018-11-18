@@ -5,7 +5,7 @@ import javax.jms.*;
 
 public class QueueTest {
 
-    @Test
+    // @Test
     public void testProducter() throws JMSException {
 
         //第一步:创建ConnectionFactory对象，需要制定服务器IP和端口号
@@ -35,7 +35,7 @@ public class QueueTest {
 
     }
 
-    @Test
+    // @Test
     public void testConsumer() throws Exception{
         //第一步：创建ConnectionFactory对象，需要制定服务器IP和端口号
         //brokerURL服务器的IP和端口号

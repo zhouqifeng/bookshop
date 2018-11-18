@@ -5,12 +5,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>${item.title } - 宜立方商城</title>
+	<title>${item.bookname } - 图书商城</title>
 	<script>
         var _SF_CFG = {
 	    www_url:'http://www.e3mall.cn',
             m_url:'http://m.e3mall.cn',
-            productId:${item.id},
+            productId:${item.bookid},
             number: 1600229585,
             minBuy: 1,
             maxBuy: 99,
@@ -32,49 +32,49 @@
 		commentType : 0
 	};
 	</script>
-	
-	<script src="/js/jquery-1.5.1.min.js?v=20160713" type="text/javascript"></script>
-<script src="/js/jquery.alerts.js?v=20160713" type="text/javascript"></script>
-<script src="/js/common.js?v=20160713" type="text/javascript"></script>
-<script src="/js/cart.js?v=20160713" type="text/javascript"></script>
-<script src="/js/cloud-zoom.1.0.2.min.js?v=20160713" type="text/javascript"></script>
-<script src="/js/jquery.thickbox.js?v=20160713" type="text/javascript"></script>
-<script src="/js/goods.js?v=20160713" type="text/javascript"></script>
-<script src="/js/NewVersion.js?v=20160713" type="text/javascript"></script>
-<script src="/js/png.js?v=20160713" type="text/javascript"></script>
-<script src="/js/qiangGouPro.js?v=20160713" type="text/javascript"></script>
-<script src="/js/jquery.cookie.js?v=20160713" type="text/javascript"></script>
-<script src='/js/jquery.lazyload.js?v=20160713' type='text/javascript'></script>
-<script type="text/javascript" src="/js/jquery.qrcode.js?v=20160713"></script> 
-<script type="text/javascript" src="/js/qrcode.js?v=20160713"></script>
-<script type="text/javascript" src="/js/cookie.js?v=20160416222"></script>
-<script type="text/javascript" src="/js/shadow.js?v=20160416"></script>
-<script src="/js/product.js?v=20160713" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="/css/base_w1200.css?v=20160713">
-<link rel="stylesheet" type="text/css" href="/css/product.css?v=20160713">
-<link rel="stylesheet" type="text/css" href="/css/jquery.alerts.css?v=20160713" />
-<link rel="stylesheet" type="text/css" href="/css/common.css?v=20160713" />
+
+    <script src="${pageContext.request.contextPath}/js/jquery-1.5.1.min.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.alerts.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/common.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/cart.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/cloud-zoom.1.0.2.min.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.thickbox.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/goods.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/NewVersion.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/png.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/qiangGouPro.js?v=20160713" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cookie.js?v=20160713" type="text/javascript"></script>
+<script src='${pageContext.request.contextPath}/js/jquery.lazyload.js?v=20160713' type='text/javascript'></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.qrcode.js?v=20160713"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/qrcode.js?v=20160713"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/cookie.js?v=20160416222"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/shadow.js?v=20160416"></script>
+<script src="${pageContext.request.contextPath}/js/product.js?v=20160713" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base_w1200.css?v=20160713">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/product.css?v=20160713">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery.alerts.css?v=20160713" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css?v=20160713" />
 </head>
 <body >
 <!-- header start -->
 <jsp:include page="commons/header.jsp" />
 <!-- header end -->
 <jsp:include page="commons/mainmenu.jsp" />
-<div class="linknav"><div class="breadcrumb"><strong><a href="/food/6-0-0-0-0-2-0-0-0-0-0.html">休闲食品</a></strong><span> &gt; <a href="/food/7321-0-0-0-0-2-0-0-0-0-0.html">月饼</a> &gt; <a href="/food/7331-0-0-0-0-2-0-0-0-0-0.html">其他月饼</a> &gt; <a href="http://www.e3mall.cn/pinpai/7331-10863.html">我是花吃</a> &gt; 我是花吃 我是花吃鲜花月饼团圆礼盒390g</span></div></div>
+<div class="linknav"><div class="breadcrumb"><strong><a href="/food/6-0-0-0-0-2-0-0-0-0-0.html">图书分类</a></strong><span> &gt; <a href="/food/7321-0-0-0-0-2-0-0-0-0-0.html">${item.typename }</a></span></div></div>
 <div class="pWrap">
     <div class="productIntro">
         <div class="pItems">
             <div class="pItemsMain">
                 <div class="pItemsName">
                     <div class="cm">
-                        <h1 id="base_name-sf">${item.title }</h1><br></br>
-						<strong id="adword-sf" title="" class="">${item.sellPoint }</strong>
+                        <h1 id="base_name-sf">${item.bookname }</h1><br></br>
+						<strong id="adword-sf" title="" class="">${item.context }</strong>
                     </div>
                 </div>
                 <div class="pItemsPrice" id="price-sf">
                 	<div class="priceBox">
-                		<span class="dt">优选价：</span><span class="rmb">￥</span>
-                		<strong class="price"><fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price / 100 }"/></strong>
+                		<span class="dt">优惠价：</span><span class="rmb">￥</span>
+                		<strong class="price"><fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price * 100 / 100 }"/></strong>
                 	</div>
                 	<div class="boxWb"></div><div id="productStamp" class="productStamp_1"></div></div>
                 <div class="clear"></div>
@@ -84,12 +84,12 @@
                     <div class="dt">送至：</div>
                     <div class="dd">
                         <div id="regionSf"><div class="" id="store-selector">
-	    <div class="text"><div title="北京昌平区回龙观镇">北京昌平区回龙观镇</div><b></b></div>
+	    <div class="text"><div title="杭州市江干区九堡镇">杭州市江干区九堡镇</div><b></b></div>
 	    
 	    <div onclick="$('#store-selector').removeClass('hover')" class="close"></div>
 	  </div>
 	  </div>
-                        <div class="pItemsPrompt" id="time-sf">原产地直供，发货后预计<strong>2-5天</strong>内为您送达</div>
+                        <div class="pItemsPrompt" id="time-sf">厂家直供，发货后预计<strong>2-5天</strong>内为您送达</div>
                     </div>
                     <span class="clear"></span>
                 </div>
@@ -100,14 +100,14 @@
                     </div>
                     <div class="chooseBtns" id="buy-btn-sf">
                         <div class="pAmount">
-                            <span><input type="text" id="number_${item.id}" class="text" value=""></span>
+                            <span><input type="text" id="number_${item.bookid}" class="text" value=""></span>
                             <span>
                                 <a href="javascript:;" id="add-sell-num" class="p-add">+</a>
                                 <a href="javascript:;" id="reduce-sell-num" class="p-reduce disable">-</a>
                             </span>
                         </div>
-                        <div class="pBtn" id="cart-add-btn-sf"><a onclick="cartAdd(${item.id}, 0, 1, 0, 1, this);"><b></b>加入购物车</a></div>
-                        <div class="pBtn quickBuy" style="display: none;" id="quickBuy" title="快速下单，直达填写订单页面"><a onclick="oneKeyBuy(${item.id}, 0, 1, 0, 1, this);">一键购买</a></div>
+                        <div class="pBtn" id="cart-add-btn-sf"><a onclick="cartAdd(${item.bookid}, 0, 1, 0, 1, this);"><b></b>加入购物车</a></div>
+                        <div class="pBtn quickBuy" style="display: none;" id="quickBuy" title="快速下单，直达填写订单页面"><a onclick="oneKeyBuy(${item.bookid}, 0, 1, 0, 1, this);">一键购买</a></div>
 						<div class="yj_time" id="sendTime">预计发货时间：<br>2014-02-28 08:59</div>
 						<div class="phone_client phone_border"><div id="phone_time">扫描下载客户端<br><em>先摇券 后买单</em></div>
 							<!--手机二维码显示层-->
@@ -157,7 +157,7 @@
 		<div class="pView">
                                 <div id="pView">
                 <div id="zoom-jpg" class="jqzoom">
-                <img alt="" width="330" height="330" src="${item.images[0] }" jqimg="${item.images[0] }"/>
+                <img alt="" width="330" height="330" src="${item.pic }" jqimg="${item.pic }"/>
                 </div>
                 <div id="pic-list">
                     <a href="javascript:void(0);" class="btn-control disabled" id="btn-forward"><b></b></a>
@@ -165,8 +165,8 @@
         
                     <div class="pic-items" style="position: absolute; width: 50px; height: 300px; overflow: hidden;">
                         <ul style="position: absolute; left: 0px; top: 0px; height: 240px;">
-                           <c:forEach items="${item.images }" var="image">
-                           <li style="float: left;"><img title="${item.title } " alt="${item.title }" src="${image }"></li>
+                           <c:forEach items="${item.pic }" var="image">
+                           <li style="float: left;"><img title="${item.bookname } " alt="${item.bookname }" src="${item.pic }"></li>
                            </c:forEach>
                         </ul>
                     </div>
@@ -195,20 +195,20 @@
                 <div class="sideWrap">
                     <div class="points">
 						<ul id="points-sf">
-							<li><img src="/images/productattr4.png"></li>
+							<li><img src="${pageContext.request.contextPath}/images/productattr4.png"></li>
 							<li class="has_poptip attr3"><img
-								src="/images/productattr3.png"></li>
-							<li><img src="/images/productattr2.png"></li>
+								src="${pageContext.request.contextPath}/images/productattr3.png"></li>
+							<li><img src="${pageContext.request.contextPath}/images/productattr2.png"></li>
 						</ul>
 					</div>
 					     		                </div>
                 <div class="pdetail">
                     <ul>
-                                                <li>品牌：<span><a href="http://www.e3mall.cn/pinpai/7331-10863.html" title="我是花吃" target="_blank">我是花吃</a></span></li>
+                                                <li>品牌：<span><a href="http://www.e3mall.cn/pinpai/7331-10863.html" title="我是花吃" target="_blank">一千零一夜</a></span></li>
                                                 <li>产地：<span><a href="/food/7331-0-45-0-0-2-0-0-0-0-0.html" title="中国" target="_blank">中国</a></span>
                         </li>
 					                                                    <li>重量：1.4kg （含包装）</li>
-                                                <li>商品编号：${item.id }</li>
+                                                <li>商品编号：${item.bookid }</li>
                         			<li class="card-pay">
 			<span class="card-pay-left">优选卡</span>
 			<span class="card-pay-right">支持优选卡支付</span>
@@ -241,21 +241,21 @@
                 <li class="curr" pcont-target="div-detail"><a title="商品详情" href="javascript:void(0);">商品介绍</a></li>
                                 <li pcont-target="div-comment"><a title="用户评价" href="javascript:void(0);">评价<b>(<font class="comment-total-sf">0</font>)</b></a></li>
                             </ul>
-            <div id="add-cart-r-btn-sf" class="p-btn"><a href="javascript:void(0);" data_url="http://p02.e3mall.cn/2016/1600229585/thumb_1600229585_1_1.jpg" pid="${item.id}">加入购物车</a></div>
+            <div id="add-cart-r-btn-sf" class="p-btn"><a href="javascript:void(0);" data_url="http://p02.e3mall.cn/2016/1600229585/thumb_1600229585_1_1.jpg" pid="${item.bookid}">加入购物车</a></div>
         </div>
         <div class="clear" id="flow-layer-sf"></div>
 		<div class="pCont cpjs_box" id="div-detail">
 			<ul class="cpjs_list">
-				<li><strong>保质期：</strong>60（天）</li>
-				<li><strong>重量(含包装)：</strong>1.4（kg）</li>
-				<li><strong>销售单位：</strong>盒</li>
-				<li><strong>产地：</strong>中国</li>
+                <li><strong>作者：</strong>${item.author}</li>
+				<li><strong>出版日期：</strong>${item.publicationdate}</li>
+				<li><strong>出版社：</strong>${item.publishname}</li>
+				<li><strong>版次：</strong>${item.edition}</li>
 			</ul>
 			<div
 				style="background-color: #f5f5f5; padding: 4px 20px 4px 0; line-height: 20px; overflow: hidden; zoom: 1;">
 				<span style="float: left; width: 100px; text-align: right; padding-right: 6px; margin-right: 6px;">温馨提示：</span>
 				<span style="display: block; overflow: hidden; zoom: 1;">
-					宜立方商城所售商品均经过严格的供应商资质审查、商品审查、入库全检、出货全检流程。
+					图书商城所售商品均经过严格的供应商资质审查、商品审查、入库全检、出货全检流程。
 					由于部分商品存在厂家更换包装、不同批次、不同生产日期、不同生产工厂等情况，
 					导致商品实物与图片存在微小差异，因此请您以收到的商品实物为准，
 					同时我们会尽量做到及时更新，由此给您带来不便敬请谅解，谢谢！
@@ -263,10 +263,10 @@
 			</div>
 			<div class="pJiucuo">
 				如果您发现商品信息存在问题，<a target="_blank"
-					href="http://www.e3mall.cn/ProductCorrection/ProductCorrection/pId/${item.id}"
+					href="http://www.e3mall.cn/ProductCorrection/ProductCorrection/pId/${item.bookid}"
 					rel="nofollow">欢迎纠错</a>
 			</div>
-			<div class="product_info">${itemDesc.itemDesc }</div>
+			<div class="product_info">${item.context }</div>
 		</div>
 			<div class="pCont" id="div-comment">
             <div class="commentList" id="commandp">
@@ -292,7 +292,7 @@
                 </div>
                 <div id="have-none-comments" style="padding-left:10px;">还木有评价额，快抢沙发吧！</div><ul class="pComment" id="comment-lists-sf"></ul>
                 <div class="plpage">
-                    <div class="showAll" style="display: none;"><a target="_blank" href="/reviewlist/0/${item.id}">[查看全部评价]</a></div>
+                    <div class="showAll" style="display: none;"><a target="_blank" href="/reviewlist/0/${item.bookid}">[查看全部评价]</a></div>
                     <div class="pages" id="comment-ajax-page-sf"><span class="prev disabled"><b class="prevarr"></b>上一页</span><span class="current">1</span><span class="next disabled">下一页<b class="nextarr"></b></span></div>
                 </div>
             </div>
@@ -344,13 +344,13 @@
 		<div class="l-recommend">
 			<div class="ct"><h2>购买此商品的顾客还买了</h2></div>
             <div class="cm">
-                <ul class="l-buy" id="buyrebuy-sf"><li><div class="p-img"><a target="_blank" href="#"><img src="/images/small_1800005691_1_1_1.jpg"></a></div><div class="title-a"><a target="_blank" href="http://www.e3mall.cn/html/products/5/1800005691.html#trackref=sfbest_item_1600229585_buy1_1">归原Green Yard 有机鲜牛奶 486ml</a></div><div class="title-b">【下单后3-5天发货】外包装更换中，请以实物为准</div><div class="p-price">￥20</div></li></ul>
+                <ul class="l-buy" id="buyrebuy-sf"><li><div class="p-img"><a target="_blank" href="#"><img src="${pageContext.request.contextPath}/images/small_1800005691_1_1_1.jpg"></a></div><div class="title-a"><a target="_blank" href="http://www.e3mall.cn/html/products/5/1800005691.html#trackref=sfbest_item_1600229585_buy1_1">归原Green Yard 有机鲜牛奶 486ml</a></div><div class="title-b">【下单后3-5天发货】外包装更换中，请以实物为准</div><div class="p-price">￥20</div></li></ul>
             </div>
         </div>
         <div class="l-recommend">
             <div class="ct"><h2>浏览此商品的顾客还浏览了</h2></div>
             <div class="cm">
-                <ul class="l-buy" id="browserbrowse-sf"><li><div class="p-img"><a target="_blank" href="#"><img src="/images/small_1800005691_1_1_1.jpg"></a></div><div class="title-a"><a target="_blank" href="http://www.e3mall.cn/html/products/5/1800005691.html#trackref=sfbest_item_1600229585_see_1">归原Green Yard 有机鲜牛奶 486ml</a></div><div class="title-b">【下单后3-5天发货】外包装更换中，请以实物为准</div><div class="p-price">￥20</div></li></ul>
+                <ul class="l-buy" id="browserbrowse-sf"><li><div class="p-img"><a target="_blank" href="#"><img src="${pageContext.request.contextPath}/images/small_1800005691_1_1_1.jpg"></a></div><div class="title-a"><a target="_blank" href="http://www.e3mall.cn/html/products/5/1800005691.html#trackref=sfbest_item_1600229585_see_1">归原Green Yard 有机鲜牛奶 486ml</a></div><div class="title-b">【下单后3-5天发货】外包装更换中，请以实物为准</div><div class="p-price">￥20</div></li></ul>
             </div>
         </div>
     </div>

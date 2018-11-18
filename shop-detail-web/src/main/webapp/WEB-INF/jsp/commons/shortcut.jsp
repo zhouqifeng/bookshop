@@ -31,7 +31,7 @@
             <i></i>
             <div class="client-txt">
               <em>扫描我，即可下载</em>
-              <strong>宜立方商城客户端</strong>
+              <strong>图书商城客户端</strong>
             </div>
           </div>
           <div class="app-btn">
@@ -91,7 +91,7 @@
       <li class="d3 tShow"><a name="sfbest_hp_hp_head_weibo" class="trackref" title="关注宜立方商城微博" href="http://weibo.com/sfbest" rel="nofollow" target="_blank"><q></q></a></li>
       <li class="d4 tShow"><q></q><!--微信-->
          <div class="dd">
-         <div class="sf_wx_t">关注宜立方商城微信</div>
+         <div class="sf_wx_t">关注图书商城微信</div>
          <div class="sf_wx"></div>
         </div>
         <div class="corner">
@@ -102,6 +102,6 @@
     </ul>
     <span class="clear"></span>
   </div>
-  <script type="text/javascript" src="/js/e3mall.js"></script>
-  <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/e3mall.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
 </div>
