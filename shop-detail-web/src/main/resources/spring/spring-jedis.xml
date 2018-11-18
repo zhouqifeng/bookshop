@@ -40,28 +40,28 @@
         <constructor-arg name="nodes">
             <set>
                 <bean class="redis.clients.jedis.HostAndPort">
-                    <constructor-arg name="host" value="101.132.38.253"/>
-                    <constructor-arg name="port" value="9001"/>
+                    <constructor-arg name="host" value="66.42.98.171"/>
+                    <constructor-arg name="port" value="7001"/>
                 </bean>
                 <bean class="redis.clients.jedis.HostAndPort">
-                    <constructor-arg name="host" value="101.132.38.253"/>
-                    <constructor-arg name="port" value="9002"/>
+                    <constructor-arg name="host" value="66.42.98.171"/>
+                    <constructor-arg name="port" value="7002"/>
                 </bean>
                 <bean class="redis.clients.jedis.HostAndPort">
-                    <constructor-arg name="host" value="101.132.38.253"/>
-                    <constructor-arg name="port" value="9003"/>
+                    <constructor-arg name="host" value="66.42.98.171"/>
+                    <constructor-arg name="port" value="7003"/>
                 </bean>
                 <bean class="redis.clients.jedis.HostAndPort">
-                    <constructor-arg name="host" value="101.132.38.253"/>
-                    <constructor-arg name="port" value="9004"/>
+                    <constructor-arg name="host" value="66.42.98.171"/>
+                    <constructor-arg name="port" value="7004"/>
                 </bean>
                 <bean class="redis.clients.jedis.HostAndPort">
-                    <constructor-arg name="host" value="101.132.38.253"/>
-                    <constructor-arg name="port" value="9005"/>
+                    <constructor-arg name="host" value="66.42.98.171"/>
+                    <constructor-arg name="port" value="7005"/>
                 </bean>
                 <bean class="redis.clients.jedis.HostAndPort">
-                    <constructor-arg name="host" value="101.132.38.253"/>
-                    <constructor-arg name="port" value="9006"/>
+                    <constructor-arg name="host" value="66.42.98.171"/>
+                    <constructor-arg name="port" value="7006"/>
                 </bean>
             </set>
         </constructor-arg>
