@@ -1,5 +1,7 @@
 package com.qf.adminmanagement.web;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.qf.common.pojo.po.TbUser;
 import com.qf.adminmanagement.pojo.dto.UserPageInfo;
 import com.qf.adminmanagement.service.UserService;
@@ -40,5 +42,25 @@ public class UserAction {
         Map<String, Object> map = userService.editUser(user);
 
         return map;
+    }
+
+    @ResponseBody
+    @PostMapping("/deleteuser")
+    public Map<String,Object> deleteUser(@RequestBody TbUser user){
+
+        Map<String, Object> map = userService.deleteUser(user);
+
+        return map;
+    }
+
+    @ResponseBody
+    @PostMapping("/deleteusers")
+    public Map<String,Object> deleteUsers(@RequestBody JSONObject ids){
+
+        JSONArray array = ids.getJSONArray("ids");
+
+        Map<String, Object> map = userService.deleteUsers(array);
+
+        return null;
     }
 }

@@ -27,4 +27,15 @@
     <update id="modifyUser" parameterType="com.qf.common.pojo.po.TbUser">
         update tb_user set username=#{username},password =#{password},phone=#{phone},mail=#{mail},address=#{address},realName=#{realname},postalCode=#{postalcode},usernote=#{usernote},sex=#{sex},spare=#{spare} where userid=#{userid}
     </update>
+
+    <delete id="removeUser" parameterType="java.lang.Integer">
+        delete from tb_user where userid=#{userid}
+    </delete>
+
+    <delete id="removeUsers">
+        delete from tb_user where userid in
+        <foreach item="array" index="index" collection="list" open="(" separator="," close=")">
+            #{array}
+        </foreach>
+    </delete>
 </mapper>
