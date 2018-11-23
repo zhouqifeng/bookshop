@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.adminmanagement.dao.TbOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.common.pojo.po.TbOrder" >
+    <id column="orderid" property="orderid" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="dealtime" property="dealtime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="spare" property="spare" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.qf.common.pojo.po.TbOrder" extends="BaseResultMap" >
+    <result column="goods" property="goods" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    orderid, username, dealtime, status, spare
+  </sql>
+  <sql id="Blob_Column_List" >
+    goods
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.qf.common.pojo.po.TbOrderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.common.pojo.po.TbOrderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_order
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_order
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.common.pojo.po.TbOrderExample" >
+    delete from tb_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.common.pojo.po.TbOrder" >
+    insert into tb_order (orderid, username, dealtime, 
+      status, spare, goods
+      )
+    values (#{orderid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{dealtime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{spare,jdbcType=VARCHAR}, #{goods,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.common.pojo.po.TbOrder" >
+    insert into tb_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        orderid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="dealtime != null" >
+        dealtime,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="spare != null" >
+        spare,
+      </if>
+      <if test="goods != null" >
+        goods,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="dealtime != null" >
+        #{dealtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="spare != null" >
+        #{spare,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null" >
+        #{goods,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.common.pojo.po.TbOrderExample" resultType="java.lang.Integer" >
+    select count(*) from tb_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_order
+    <set >
+      <if test="record.orderid != null" >
+        orderid = #{record.orderid,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dealtime != null" >
+        dealtime = #{record.dealtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.spare != null" >
+        spare = #{record.spare,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goods != null" >
+        goods = #{record.goods,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tb_order
+    set orderid = #{record.orderid,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      dealtime = #{record.dealtime,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=INTEGER},
+      spare = #{record.spare,jdbcType=VARCHAR},
+      goods = #{record.goods,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_order
+    set orderid = #{record.orderid,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      dealtime = #{record.dealtime,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=INTEGER},
+      spare = #{record.spare,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.common.pojo.po.TbOrder" >
+    update tb_order
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="dealtime != null" >
+        dealtime = #{dealtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="spare != null" >
+        spare = #{spare,jdbcType=VARCHAR},
+      </if>
+      <if test="goods != null" >
+        goods = #{goods,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qf.common.pojo.po.TbOrder" >
+    update tb_order
+    set username = #{username,jdbcType=VARCHAR},
+      dealtime = #{dealtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      spare = #{spare,jdbcType=VARCHAR},
+      goods = #{goods,jdbcType=LONGVARCHAR}
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.common.pojo.po.TbOrder" >
+    update tb_order
+    set username = #{username,jdbcType=VARCHAR},
+      dealtime = #{dealtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      spare = #{spare,jdbcType=VARCHAR}
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+  <select id="selectCount" parameterType="com.qf.adminmanagement.pojo.dto.OrderInfo" resultType="Integer">
+    SELECT count(orderid) from tb_order
+    <where>
+      <if test="select_word!= null and select_word!=''">
+        username like concat('%',#{select_word},'%')
+      </if>
+    </where>
+  </select>
+  <select id="selectOrders" parameterType="com.qf.adminmanagement.pojo.dto.OrderInfo" resultType="com.qf.common.pojo.po.TbOrder">
+    select orderid, username, goods, dealtime,
+    (case tb_order.status
+    when 0 then '未支付'
+    when 1 then '已支付'
+    when 2 then '已处理'
+    else '异常'
+    end
+    )status, spare from tb_order
+    <where>
+      <if test="select_word!= null and select_word!=''">
+        username like concat('%',#{select_word},'%')
+      </if>
+    </where>
+    limit #{offset},#{pagesize}
+  </select>
+</mapper>
