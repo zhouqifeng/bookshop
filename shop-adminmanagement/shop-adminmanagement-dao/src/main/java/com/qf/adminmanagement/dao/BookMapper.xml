@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.adminmanagement.dao.BookMapper">
+
+    <sql id="selectbooksql">
+        i.bookId,i.bookname,i.isbn,i.author,i.publisherid,i.edition,i.publicationdate,i.context,i.smalltypeId,i.pic,i.status,t.typename as booktype,t.parentid as parentid,p.publishername as publishername,c.price as bookprice,c.num as bookcount
+    </sql>
+
+    <select id="selectCount" parameterType="com.qf.management.pojo.vo.PageInfo" resultType="java.lang.Integer">
+        select count(1)
+        from tb_bookinfo
+        <where>
+            <if test="searchWord != null and searchWord != ''">
+                and bookname like "%${searchWord}%"
+            </if>
+        </where>
+    </select>
+
+    <select id="selectBooksByPage" parameterType="com.qf.management.pojo.vo.PageInfo" resultType="com.qf.management.pojo.po.Book">
+        select <include refid="selectbooksql" />
+        from tb_bookinfo i
+        left join tb_booktype t on i.smalltypeId=t.id
+        left join tb_publisher p on  i.publisherid=p.publisherid
+        left join tb_bookinventory c on i.isbn=c.isbn
+        <where>
+            <if test="searchWord != null and searchWord != ''">
+                and bookname like "%${searchWord}%"
+            </if>
+        </where>
+        limit #{offSet},#{pageSize};
+    </select>
+
+    <update id="updateStatusUnder" parameterType="com.qf.management.pojo.po.Book">
+        update tb_bookinfo set status=1 where bookId=#{bookId};
+    </update>
+
+    <update id="updateStatusUp" parameterType="com.qf.management.pojo.po.Book">
+        update tb_bookinfo set status=0 where bookId=#{bookId};
+    </update>
+
+    <select id="selectBigTypes" resultType="com.qf.management.pojo.po.BookType">
+        select id,parentid,typename from tb_booktype where parentid=0;
+    </select>
+
+    <select id="selectSmallTypes" resultType="com.qf.management.pojo.po.BookType">
+        select id,parentid,typename from tb_booktype where parentid>0;
+    </select>
+
+    <update id="updateBookById" parameterType="com.qf.management.pojo.po.Book">
+        update tb_bookinfo set bookname=#{bookname},author=#{author},context=#{context},smalltypeId=#{smalltypeId} where bookId=#{bookId};
+    </update>
+
+    <update id="updateBookInventoryById" parameterType="com.qf.management.pojo.po.Book">
+        update tb_bookinventory set price=#{bookprice},num=#{bookcount} where isbn=#{isbn};
+    </update>
+
+    <insert id="insertBookinventory" parameterType="com.qf.management.pojo.po.Book">
+        insert into tb_bookinventory(isbn,num,price,updatetime) values(#{isbn},#{bookcount},#{bookprice},now());
+    </insert>
+    
+    <insert id="insertPublisher" parameterType="com.qf.management.pojo.po.Book">
+        INSERT INTO tb_publisher(publishername) VALUES(#{publishername});
+    </insert>
+
+    <select id="selectPublisherid" parameterType="com.qf.management.pojo.po.Book" resultType="java.lang.Integer">
+        select publisherid from tb_publisher where publishername=#{publishername};
+    </select>
+
+    <insert id="insertBookinfo" parameterType="com.qf.management.pojo.po.Book">
+        insert into tb_bookinfo(bookname,isbn,author,smalltypeId,publisherid,edition,publicationdate,pic,context)
+        values (#{bookname},#{isbn},#{author},#{smalltypeId},#{publisherid},#{edition},#{publicationdate},#{pic},#{context});
+    </insert>
+
+    <select id="selectBookidByIsbn" parameterType="com.qf.management.pojo.po.Book" resultType="java.lang.Integer">
+        select bookId from tb_bookinfo where isbn=#{isbn};
+    </select>
+
+    <select id="selectPublishername" parameterType="com.qf.management.pojo.po.Book" resultType="java.lang.Integer">
+        select count(1) from tb_publisher where publishername=#{publishername};
+    </select>
+
+</mapper>
